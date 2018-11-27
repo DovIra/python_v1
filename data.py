@@ -16,11 +16,14 @@
 #    Сформувати структуру датасету для дного користувача.
 
 
-dataset = \
-{
-
-
+dataset = {
+    "EK346743":{
+        "ukrain":{"borsh","carrot"},
+        "usa":{"icecream","marshmello"},
+        "poland":{"varenik","pampushka"}
+    }
 }
+print(dataset)
 
 
 

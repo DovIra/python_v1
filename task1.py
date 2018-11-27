@@ -5,20 +5,21 @@ from data import dataset
 
 
 def addUserDish(user_name, country, dish):
-    #TODO
 
+    if user_name in dataset:
+
+        if country in dataset[user_name]:
+
+            dish = dataset[user_name][country]
+            country.append(dish)
+        else:
+            dataset[user_name][country] = [dish]
+    else:
+        dataset[user_name] = {country: {dish}}
 
 
 print("Task 1")
-
-#Додати нового користувача та страву у новій країні
-addUserDish(?,?,?)
-
-#Додати існуючому користувачу нову країну з новою стравою
-addUserDish(?,?,?)
-
-#Додати існуючому користувачу нову страву в існуючого країну
-addUserDish(?,?,?)
+addUserDish("EV346745", "Italian", "coca")
 
 print(dataset)
 

@@ -2,10 +2,15 @@ from data import dataset
 
 
 #    Створити пакет validators та написати функції, що валідують усі дані. Імпорутвати дані функції.
+#паспорт: дві великі літери англійської абетки у верхньому регістрі, потім 6 цифр.
+#назва країни та страви : не більше 10 літер англійської абетки у нижньому регістрі, перша літера завжди велика
 
-from validators.lib import ?
-?
-?
+
+from validators.lib import getUserPassport
+from validators.lib import getCountryName
+from validators.lib import getDishName
+
+
 
 
 from task1 import addUserDish
@@ -15,15 +20,23 @@ from task1 import addUserDish
 #   Усі дані вводить користувач. Використати валідатори. Викликати функцію
 
 def addUserDishValidator():
-    #TODO
-    ? = getUserPassport()
 
+    user_input = getUserPassport()
+    while not user_input:
+        print("Error in number of passport. Try again")
+        user_input = getUserPassport()
 
-    ? = getCountryName()
+    country = getCountryName()
+    while not country:
+        print("Error in name of country. Try again")
+        country = getCountryName()
 
-    ? = getDishName()
+    dish = getDishName()
+    while not dish:
+        print("Error in name of dish. Try again")
+        dish = getDishName()
 
-    addUserDish(?, ?, ?)
+    addUserDish(user_input,country , dish)
 
 
 
